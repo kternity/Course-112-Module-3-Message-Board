@@ -6,9 +6,15 @@
 <h1>Posts</h1>
 <ul>
    {% for post in post_list %}
-   <li>
-      {{ post.title }}
-   </li>
+   <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+        <p class="card-text">{{ post.body }}</p>
+        <a href="{% url 'detail' post.id %}" class="card-link">Read more...</a>
+      </div>
+    </div>
+    <br />
    {% endfor %}
 </ul>
 {% endblock content %}

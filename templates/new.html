@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}New Post{% endblock title %}
+
+
+{% block content %}
+<h1>New Post</h1>
+<form method="POST">
+   {% csrf_token %}<!--crosssite forgery protection/kind of old school. the token is given to us to validate -->
+   {{ form.as_p }} <!--Jinja form object as_p attributes/renders as paragraph -->
+   <input type="submit" value="Create" class="btn btn-success">  <!-- value is what is going to show on the button--> 
+</form>
+{% endblock content %}
